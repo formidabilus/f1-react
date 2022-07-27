@@ -1,0 +1,193 @@
+@font-face {
+  font-family: f1-bold;
+  src: url("../../assets/fonts/Formula1-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: f1-regular;
+  src: url("../../assets/fonts/Formula1-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: f1-wide;
+  src: url("../../assets/fonts/Formula1-Wide.otf") format("opentype");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 40px;
+}
+
+.border {
+  height: 100%;
+  width: 100%;
+  padding-right: 20px;
+  border-top: solid 2px black;
+  border-right: solid 2px black;
+  border-top-right-radius: 10px;
+  position: absolute;
+}
+
+.border:hover {
+  /* TODO: CHANGE BORDER COLOR TO HEX */
+  padding-top: 20px;
+  transition: 0.1s all ease;
+  transform: translateY(-20px);
+}
+
+.card {
+  background: white;
+  padding-right: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+  position: relative;
+  height: 350px;
+  width: 290px;
+  font-family: "f1-regular", sans-serif;
+  cursor: pointer;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: "f1-bold", sans-serif;
+}
+
+.rank {
+  font-family: "f1-bold", sans-serif;
+  font-size: 50px;
+  padding: 0;
+  margin: auto 0;
+}
+
+.points-and-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.points-text {
+  font-family: "f1-wide", sans-serif;
+  font-size: 18px;
+}
+
+.points-text::after {
+  content: "PTS";
+  padding: 0 2px;
+  color: white;
+  background-color: black;
+  display: block;
+}
+
+.add-points {
+  font-family: "f1-regular";
+  width: auto;
+  margin: auto;
+  margin-right: 10px;
+  background-color: red;
+  color: black;
+  border: 1px solid black;
+  transition-duration: 0.2s;
+  /* z-index: 99; */
+}
+
+.add-points:hover {
+  background-color: black;
+  color: white;
+}
+
+.add-points:active {
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
+}
+
+.container-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-and-line {
+  display: flex;
+  justify-content: flex-start;
+  height: 50px;
+  padding: auto;
+}
+
+.line-color {
+  width: 5px;
+  height: 60%;
+  margin: auto;
+  margin-right: 5px;
+}
+
+.firstName,
+.lastName {
+  text-transform: uppercase;
+}
+
+.firstName {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  padding-top: 5px;
+  margin: 0;
+}
+
+.lastName {
+  font-family: "f1-bold", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+.country-flag {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.team-name {
+  margin-left: 0;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  color: #67676d;
+}
+
+.photo-container {
+  position: relative;
+  width: 300px;
+  height: 160px;
+}
+
+.photo-background {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+.photo {
+  position: absolute;
+  height: 155px;
+  width: 160px;
+  padding-bottom: 10px;
+}
+
+.number {
+  position: absolute;
+  color: red;
+  font-family: "f1-wide", sans-serif;
+  font-size: 45px;
+  letter-spacing: 0.2px;
+  margin-left: 0;
+  margin-top: 36%;
+  padding: 0;
+}
