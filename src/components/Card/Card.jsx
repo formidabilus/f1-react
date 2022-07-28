@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import getUnicodeFlagIcon from "country-flag-icons/unicode";
 import "./Card.styles.css";
 
 const Card = ({ cards }) => {
@@ -7,9 +8,6 @@ const Card = ({ cards }) => {
 
   const sortByPoints = (cards) =>
     cards.sort((pilot, otherPilot) => otherPilot.points - pilot.points);
-
-  console.log(cardsList);
-  console.log(sortByPoints(cardsList));
 
   useEffect(() => setCardsList(cards), []);
 
@@ -75,7 +73,9 @@ const Card = ({ cards }) => {
                       <p className="lastName">{lastName}</p>
                     </span>
                   </div>
-                  <p className="country-flag">{country}</p>
+                  <span className="country-flag">
+                    {getUnicodeFlagIcon(country)}
+                  </span>
                 </div>
                 <hr />
                 <p className="team-name">{team}</p>

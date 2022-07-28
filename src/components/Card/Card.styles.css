@@ -112,6 +112,7 @@ body {
 .container-name {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .name-and-line {
@@ -139,6 +140,7 @@ body {
   letter-spacing: 0.5px;
   padding-top: 5px;
   margin: 0;
+  text-align: left;
 }
 
 .lastName {
@@ -150,8 +152,12 @@ body {
 }
 
 .country-flag {
-  text-transform: uppercase;
-  font-weight: bold;
+  display: inline-block;
+  transform: scale(3, 3);
+  padding: 0;
+  position: absolute;
+  margin-left: 90%;
+  margin-top: 15px;
 }
 
 .team-name {
