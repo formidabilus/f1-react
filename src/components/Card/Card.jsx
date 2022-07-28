@@ -3,13 +3,12 @@ import getUnicodeFlagIcon from "country-flag-icons/unicode";
 import "./Card.styles.css";
 
 const Card = ({ cards }) => {
-  //const [isHovering, setIsHovering] = useState(false);
   const [cardsList, setCardsList] = useState([]);
+
+  useEffect(() => setCardsList(cards), []);
 
   const sortByPoints = (cards) =>
     cards.sort((pilot, otherPilot) => otherPilot.points - pilot.points);
-
-  useEffect(() => setCardsList(cards), []);
 
   const addPoints = (index) => {
     const newCard = { ...cardsList[index] };
@@ -23,13 +22,24 @@ const Card = ({ cards }) => {
     ]);
   };
 
-  //   const handleMouseEnter = () => {
-  //     setIsHovering(true);
-  //   };
+  function changeBorderColorHex(index) {
+    const currentCard = document.getElementById(`card-number-${index}`);
+    currentCard.addEventListener("mouseenter", (e) => {
+      const border = currentCard.getElementsByClassName("border").item(0);
+      border.style.borderTopColor = cardsList[index].hex;
+      border.style.borderRightColor = cardsList[index].hex;
+    });
+  }
 
-  //   const handleMouseLeave = () => {
-  //     setIsHovering(false);
-  //   };
+  function changeBorderColorBlack(index) {
+    const currentCard = document.getElementById(`card-number-${index}`);
+    currentCard.addEventListener("mouseleave", (e) => {
+      const border = currentCard.getElementsByClassName("border").item(0);
+      border.style.borderTopColor = "black";
+      border.style.borderRightColor = "black";
+    });
+  }
+
   return (
     <>
       {sortByPoints(cardsList).map(
@@ -37,15 +47,11 @@ const Card = ({ cards }) => {
           { firstName, lastName, number, team, points, image, country, hex },
           index
         ) => (
-          <article className="card" key={number}>
+          <article className="card" key={number} id={`card-number-${index}`}>
             <div
               className="border"
-              //   onMouseEnter={handleMouseEnter}
-              //   onMouseLeave={handleMouseLeave}
-              //   style={{
-              //     borderTopColor: isHovering ? hex : "",
-              //     borderRightColor: isHovering ? hex : "",
-              //   }}
+              onMouseEnter={() => changeBorderColorHex(index)}
+              onMouseLeave={() => changeBorderColorBlack(index)}
             >
               <div className="card-header">
                 <p className="rank">{index + 1}</p>

@@ -163,6 +163,7 @@ body {
 .team-name {
   margin-left: 0;
   font-size: 12px;
+  text-align: left;
   line-height: 15px;
   letter-spacing: 0.5px;
   color: #67676d;
