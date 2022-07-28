@@ -38,7 +38,6 @@ body {
 }
 
 .border:hover {
-  /* TODO: CHANGE BORDER COLOR TO HEX */
   padding-top: 20px;
   transition: 0.1s all ease;
   transform: translateY(-20px);
@@ -96,7 +95,6 @@ body {
   color: black;
   border: 1px solid black;
   transition-duration: 0.2s;
-  /* z-index: 99; */
 }
 
 .add-points:hover {
@@ -171,30 +169,51 @@ body {
 
 .photo-container {
   position: relative;
-  width: 300px;
+  width: 100%;
   height: 160px;
 }
 
 .photo-background {
   position: absolute;
   width: 100%;
-  height: auto;
+  height: 97%;
+  background-image: url(https://www.formula1.com/etc/designs/fom-website/images/patterns/plus-x1.png);
+  background-size: 8px;
+  background-repeat: repeat;
 }
 
 .photo {
   position: absolute;
   height: 155px;
   width: 160px;
-  padding-bottom: 10px;
 }
 
 .number {
   position: absolute;
+  background-color: white;
   color: red;
   font-family: "f1-wide", sans-serif;
   font-size: 45px;
   letter-spacing: 0.2px;
-  margin-left: 0;
-  margin-top: 36%;
-  padding: 0;
+  left: 0px;
+  bottom: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    min-width: 300px;
+  }
+  .container {
+    gap: 1.75%;
+  }
+
+  .card:nth-child(-n + 3) {
+    width: 25%;
+  }
+
+  .card:nth-child(n + 4) {
+    width: 15%;
+  }
 }
